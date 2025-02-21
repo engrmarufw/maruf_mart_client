@@ -2,20 +2,101 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 240 6% 95%; /* Cloud Gray */
+    --foreground: 0 0% 10%; /* Obsidian Black */
+    
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 350 80% 50%; /* Fiery Magenta */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 135 30% 40%; /* Deep Olive Green */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 85%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 45 85% 50%; /* Rich Gold */
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 350 75% 45%; /* Neon Pink */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 350 80% 50%;
+
+    /* High-Converting Elements */
+    --cta: 330 90% 45%; /* Neon Pink */
+    --cta-foreground: 0 0% 100%;
+
+    /* Chart Colors */
+    --chart-1: 350 80% 50%; /* Fiery Magenta */
+    --chart-2: 135 30% 40%; /* Deep Olive Green */
+    --chart-3: 45 85% 50%; /* Rich Gold */
+    --chart-4: 330 90% 45%; /* Neon Pink */
+    --chart-5: 240 40% 45%; /* Deep Purple */
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 0 0% 10%; /* Midnight Espresso */
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 350 85% 50%; /* Fiery Magenta */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 135 35% 45%; /* Deep Olive Green */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 45 90% 55%; /* Rich Gold */
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 350 85% 50%; /* Neon Pink */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 350 80% 50%;
+
+    /* High-Converting Elements */
+    --cta: 330 90% 50%; /* Neon Pink */
+    --cta-foreground: 0 0% 100%;
+
+    /* Chart Colors */
+    --chart-1: 350 80% 50%; /* Fiery Magenta */
+    --chart-2: 135 35% 45%; /* Deep Olive Green */
+    --chart-3: 45 90% 55%; /* Rich Gold */
+    --chart-4: 330 90% 50%; /* Neon Pink */
+    --chart-5: 240 45% 50%; /* Deep Purple */
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
